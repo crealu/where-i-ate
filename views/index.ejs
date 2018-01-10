@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Where I Ate Today</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h1>Where I Ate Today</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <form action="/things" method="POST">
+          <input type="text" placeholder="restaurant" name="restaurant" class="thing-input">
+          <input type="text" placeholder="location" name="location" class="thing-input">
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div><br><br>
+
+    <div class="row">
+      <div class="col-xs-6 text-center">
+        <h3>Restaurant</h3>
+      </div>
+      <div class="col-xs-6 text-center">
+        <h2>Location</h2>
+      </div>
+    </div>
+
+    <div class="row">
+        <% for(var i=0; i<things.length; i++) {%>
+        <div class="col-xs-6 text-center">
+          <span class="newItems"><%= things[i].restaurant %></span>
+        </div>
+        <div class="col-xs-6 text-center">
+          <span class="newItems"><%= things[i].location %></span>
+        </div>
+        <% } %>
+    </div><br><br><br>
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h4>Replace Great India with Cafe Enchante</h4>
+        <button id="update-place">Update</button>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h4>Delete Cafe Enchante</h4>
+        <button id="delete-cafe">Delete</button>
+      </div>
+    </div><br><br>
+
+    <script src="main.js"></script>
+  </body>
+</html>

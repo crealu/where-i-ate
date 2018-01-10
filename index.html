@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1> i'm alive!</h1>
+
+    <form action="/things" method="POST">
+      <input type="text" placeholder="date" name="date" class="thing-input">
+      <input type="text" placeholder="thing1" name="thing1" class="thing-input">
+      <input type="text" placeholder="location" name="location" class="thing-input">
+      <button type="submit">Submit</button>
+    </form>
+
+    <% for(var i=0; i<things.length; i++) {%>
+      <div class="col-xs-3 text-center">
+        <span><%= things[i].date %></span>
+      </div>
+      <div class="col-xs-6 text-center">
+        <ul class="things">
+          <li class="thing"><%= things[i].thing1 %></li>
+        </ul>
+      </div>
+      <div class="col-xs-3 text-center">
+        <span><%= things[i].location %></span>
+      </div>
+    <% } %>
+  </body>
+</html>
