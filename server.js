@@ -6,7 +6,7 @@ const ejs = require('ejs');
 
 const app = express();
 
-var url = 'mongodb://user:pswd@ds133876.mlab.com:33876/lesson';
+var url = 'mongodb://user:pswd@ds133876.mlab.com:33876/dbname';
 var db;
 MongoClient.connect(url, (err, database) => {
   if (err) {return console.log(err);}
